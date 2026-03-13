@@ -262,7 +262,18 @@ local function GenerateWallPoints(p1, p2)
 
     for i = 0, numPoints do
         local newPos = p1 + (direction * (i * smokeSpacing))
-        table.insert(SmokePositions, vector3(newPos.x, newPos.y, newPos.z or zoneZ))
+        local z = newPos.z
+
+        if not z then
+            local found, groundZ = GetGroundZFor_3dCoord(newPos.x, newPos.y, 1000.0, false)
+            if found and groundZ then
+                z = groundZ
+            else
+                z = 50.0
+            end
+        end
+
+        table.insert(SmokePositions, vector3(newPos.x, newPos.y, z))
     end
 end
 
