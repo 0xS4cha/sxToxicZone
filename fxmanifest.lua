@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-name 'sxGroup'
+name 'sxToxicZone'
 description 'Sacha | Development'
 author 'sacha-development'
 lua54 'yes'
