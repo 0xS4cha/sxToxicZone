@@ -1,6 +1,6 @@
 local defaultPhrases = {
-	enter_zone = "Vous rentrer dans la zone %s",
-	description_zone = "Du gaz est rependu dans la zone, faites attention"
+	enter_zone = "You are entering the %s zone",
+	description_zone = "Gas is spread in the area, be careful"
 }
 
 RegisterDefaultPhrases(defaultPhrases)

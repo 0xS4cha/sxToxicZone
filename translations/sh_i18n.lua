@@ -32,7 +32,6 @@ function AddLanguage(name, tbl)
     local old = registeredLanguages[name] or {}
     registeredLanguages[name] = tbl
 
-    -- Merge the language with the translations added by AddPhrase
     for k, v in pairs(old) do
         if not registeredLanguages[name][k] then
 			registeredLanguages[name][k] = v
@@ -118,22 +117,6 @@ end
 
 if not SendNUIMessage then return end
 
--- Utils
-function GetVehicleNameFromModel(modelHash)
-	local displayName = GetDisplayNameFromVehicleModel(modelHash)
-	local labelName = GetLabelText(displayName)
-	if labelName ~= "NULL" then
-		return labelName
-	end
-
-	if displayName ~= "CARNOTFOUND" then
-		return displayName
-	end
-
-	return modelHash
-end
-
--- Get system languages
 CreateThread(function()
 
 	SetTimeout(1000, function() 

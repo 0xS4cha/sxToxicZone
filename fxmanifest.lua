@@ -25,5 +25,8 @@ shared_script {
 
 client_script {
     "srcs/client/polyzone/*.lua",
+    "srcs/client/clothing.lua",
+    "srcs/client/smoke.lua",
+    "srcs/client/timecycle.lua",
     "srcs/client/main.lua"
 }
